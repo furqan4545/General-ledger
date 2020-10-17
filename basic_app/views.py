@@ -84,7 +84,6 @@ class ProductListView(ListView):
         query2 = self.request.GET.get('selected_date')
         query3 = self.request.GET.get('myDate')
         if query2:
-            print(query2)
             # month_number = query2[:3]
             # year = query2[10:]
             # day = query2[6:8]
@@ -98,7 +97,7 @@ class ProductListView(ListView):
                     Q(create_date__icontains=query2)
             )
             
-            with open(f'{query2}.csv', 'w', newline='') as file:
+            with open(f'CSV files/Daily/{query2}.csv', 'w', newline='') as file:
                 fieldnames = ['Item Name', 'Total price', 'quantity', 'Unit', 'create_date']
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
                 writer.writeheader()
@@ -119,14 +118,13 @@ class ProductListView(ListView):
             if month_number < 10:
                 month_number = f"0{month_number}"
             time = f"{year}-{month_number}"
-            print(time)
 
             object_list = Post.objects.filter(
                     Q(create_date__icontains=time)
             )
             print(object_list)
 
-            with open(f'{query3}.csv', 'w', newline='') as file:
+            with open(f'CSV files/Monthly/{query3}.csv', 'w', newline='') as file:
                 fieldnames = ['Item Name', 'Total price', 'quantity', 'Unit' , 'create_date']
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
                 writer.writeheader()
@@ -216,7 +214,7 @@ class PeopleListView(ListView):
                     Q(date__icontains=query2)
             )
             
-            with open(f'Hisaab-{query2}.csv', 'w', newline='') as file:
+            with open(f'CSV files/Daily/Hisaab-{query2}.csv', 'w', newline='') as file:
                 fieldnames = ['Person Name', 'Total Bill', 'Paid Money', 'Rem Money', 'Item Name', 'Date']
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
                 writer.writeheader()
@@ -243,13 +241,12 @@ class PeopleListView(ListView):
             if month_number < 10:
                 month_number = f"0{month_number}"
             time = f"{year}-{month_number}"
-            print(time)
 
             object_list2 = People.objects.filter(
                     Q(date__icontains=time)
             )
             
-            with open(f'Hisaab-{query3}.csv', 'w', newline='') as file:
+            with open(f'CSV files/Monthly/Hisaab-{query3}.csv', 'w', newline='') as file:
                 fieldnames = ['Person Name', 'Total Bill', 'Paid Money', 'Rem Money', 'Item Name', 'Date']
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
                 writer.writeheader()
