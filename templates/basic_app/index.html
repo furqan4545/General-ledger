@@ -1,0 +1,61 @@
+{% extends "basic_app/base.html" %}
+{% load bootstrap4 %}
+
+{% load static %}
+
+{% block body_block %}
+
+    <div class="jumbotron">
+        <div>
+            <h1>WELCOME TO CHATKAS! </h1>
+
+        </div>
+    </div>
+
+    <div>
+        <div class="tips text-success">
+            <h2>Important Tips!</h2>
+        </div>
+        
+        <div class="card-deck">
+            <div class="card">
+                <a class="text-danger" href="{% url 'basic_app:list' %}" >
+                    <div class="card-body text-danger">
+                        <h4 class="card-title text-success">Items</h4>
+                        <p class="card-text">For checking how many Items I purchased today.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a class="text-danger" href="{% url 'basic_app:create' %}" >
+                    <div class="card-body">
+                        <h4 class="card-title text-success">Add Item</h4>
+                        <p class="card-text">For adding new item/commodity press Add Item.</p>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="card-deck">
+            <div class="card">
+                <a class="text-danger" href="{% url 'basic_app:people_list' %}" >
+                    <div class="card-body">
+                        <h4 class="card-title text-success">Total Hisaab</h4>
+                        <p class="card-text">For checking the salaries, utility bills and remaining debts. </p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card">
+                <a class="text-danger" href="{% url 'basic_app:people_create' %}" >
+                    <div class="card-body">
+                        <h4 class="card-title text-success">Add Payment</h4>
+                        <p class="card-text">For adding new record of payment that we made today.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

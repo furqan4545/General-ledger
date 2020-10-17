@@ -1,0 +1,70 @@
+h1{
+    color: red;
+    font-size: 50px;
+    font-family: "Raleway", sans-serif;
+
+}
+
+
+
+.input-group.md-form.form-sm.form-1 input{
+  border: 1px solid #bdbdbd;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input {
+  border: 1px solid #bdbdbd;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input.red-border {
+  border: 1px solid #ef9a9a;
+}
+.input-group.md-form.form-sm.form-2 input.lime-border {
+  border: 1px solid #cddc39;
+}
+.input-group.md-form.form-sm.form-2 input.amber-border {
+  border: 1px solid #ffca28;
+}
+
+
+.ui-datepicker-calendar {
+    display: none;
+}
+
+.main {
+  min-height: 100vh;
+  align-items: center;
+}
+
+body {
+  background: #ffcccc;
+  margin: 2px;
+}
+
+h3 {
+  font-family: "Raleway", sans-serif;
+}
+
+.size:hover {font-size: 150%;}
+
+.border {
+  border-width:3px !important;
+}
+
+.jumbotron {
+  margin-top: 20px;
+}
+
+.tips {
+  margin-bottom: 30px;
+}
+
+.card-deck {
+  margin-bottom: 30px;
+}
+
+.heading {
+  margin-top: 20px;
+}
+

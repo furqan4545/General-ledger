@@ -1,0 +1,60 @@
+{% extends 'basic_app/base.html' %}
+{% load bootstrap4 %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+    <h1 class="tips">Item Details </h1>
+    <p>Name: {{ product_detail.com_name }}</p>
+    <p>Total Price: {{ product_detail.total_price }}</p>
+    <div class="row">
+        <div class="col-3">
+            <p>Quantity: {{ product_detail.quantity }}</p>
+        </div>
+    </div>
+    {% if product_detail.unit == "gm" %}
+        <p>Unit: Gram</p>
+    {% elif product_detail.unit == "kg" %}
+        <p>Unit: Kilogram</p>
+    {% else %}
+        <p>Unit: Number</p>
+
+    {% endif %}
+
+    <p>Registered date: {{ product_detail.create_date }}</p>
+
+</div>
+
+<div class="container">
+    <a class="btn btn-warning" href="{% url 'basic_app:update' pk=product_detail.pk %}">Update</a>
+    <a class="btn btn-danger" href="{% url 'basic_app:delete' pk=product_detail.pk %}">Delete</a>
+    
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

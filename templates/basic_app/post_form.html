@@ -1,0 +1,43 @@
+{% extends "basic_app/base.html" %}
+{% load bootstrap4 %}
+
+{% block body_block %}
+
+
+<div class="jumbotron">
+    <div class="tips">
+        <h1>
+            {% if not form.instance.pk %}
+            Register New Item
+            {% else %}
+            Update Item
+            {% endif %}
+        </h1>   
+    </div>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Submit">
+
+    </form>
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

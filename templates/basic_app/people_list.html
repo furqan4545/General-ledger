@@ -1,0 +1,87 @@
+{% extends "basic_app/base.html" %}
+{% load bootstrap4 %}
+
+{% block body_block %}
+<div class="container">
+    <h1 class="heading">Hisaab Kitaab</h1>
+
+    <div class="md-form active-purple active-purple-2 mb-3 border border-purple">
+        <form action="{% url 'basic_app:people_list' %}" method="get">
+            <input class="form-control" type="text" name="query" placeholder="Search For Person" aria-label="Search">
+        </form>
+    </div>
+
+    <div class="jumbotron">
+        <div class="container" style="height: 800px; overflow: auto;">
+            <div class="row">
+                <div class="col">
+                    <ol>
+                        {% for people in peoples %}
+                            <h2><li><a href="{{ people.id }}">{{ people.name }}</a></li></h2>
+
+                        {% endfor %}
+                    </ol>
+                </div>
+
+                <div align="right" class="col">
+                    <!-- <form action="{% url 'basic_app:list' %}" method="get"> -->
+                        <!-- <select class="selectpicker" data-size="8" name="selected_date">
+                            {% for date in unique_dates %}
+                                <option>{{ date }}</option>
+                            {% endfor %}
+                        </select> -->
+                        
+                        <form action="{% url 'basic_app:people_list' %}" method="get">
+                            <div>
+                                <label for="birthday">Select Date:</label>
+                                <input type="date" id="birthday" name="selected_date">
+                            </div>
+
+                            <div class="col">
+                                <p>OR</p>
+                            </div>
+
+                            <div>
+                                <label for="myDate">Select Month:</label>
+                                <input name="myDate" class="monthYearPicker" />
+                            </div>
+                            
+                            <div>
+                                <button type="submit" name="download" class="btn btn-info">Download</button>
+                            </div>
+                            
+                        </form>
+                        
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

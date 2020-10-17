@@ -1,0 +1,14 @@
+{% extends "basic_app/base.html" %}
+{% load bootstrap4 %}
+
+{% block body_block %}
+
+<h1>Delete {{ people.name }}? </h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Confirm">
+    <a href="{% url 'basic_app:people_detail' pk=people.pk %}">Cancel</a>
+
+</form>
+
+{% endblock %}

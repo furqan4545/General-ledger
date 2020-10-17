@@ -1,0 +1,25 @@
+{% extends 'basic_app/base.html' %}
+{% load bootstrap4 %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+    <h1 class="tips">People Details </h1>
+    <p>Name: {{ people_detail.name }}</p>
+    <p>Total Bill: {{ people_detail.total_bill }}</p>
+    <p>Paid Amount: {{ people_detail.paid_money }}</p>
+    <p>Debt: {{ people_detail.rem_money }}</p>
+    <p>Item Name: {{ people_detail.item_name }}</p>
+    <p>Entry date: {{ people_detail.date }}</p>
+
+</div>
+
+<div class="container">
+    <a class="btn btn-warning" href="{% url 'basic_app:people_update' pk=people_detail.pk %}">Update</a>
+    <a class="btn btn-danger" href="{% url 'basic_app:people_delete' pk=people_detail.pk %}">Delete</a>
+
+    <button class="btn btn-primary" id="generate">Generate Invoice</button>
+</div>
+
+
+{% endblock %}
